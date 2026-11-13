@@ -92,6 +92,11 @@ export const content = {
           proof: '−49.5% page-rendering load',
         },
         {
+          name: 'Cloud cost review',
+          text: "Infrastructure bills tend to grow with things nobody uses anymore: idle databases, network endpoints, oversized functions, environments that never sleep. I go through your bill line by line, tie each cost to what it actually serves and cut or replace what doesn't pay for itself, without trading away reliability.",
+          proof: '~US$86/month of fixed AWS cost removed',
+        },
+        {
           name: 'Faster, safer deploys',
           text: 'Manual or slow deploys make teams ship less and batch more risk into each release. I automate the path from merge to production: build only what changed, lean images, servers that update themselves, and no one logging in over SSH to ship.',
           proof: 'Manual SSH deploys → ~3.5 min automated',
@@ -281,6 +286,11 @@ export const content = {
           tag: 'Comece aqui',
           text: 'Bots e crawlers podem ser boa parte do que seus servidores processam. Mapeio o tráfego por origem, separo o que te ajuda (buscadores, parceiros) do que só custa e coloco a regra certa na frente de cada um. Você recebe um relatório escrito e as correções aplicadas.',
           proof: '−49,5% de carga de renderização',
+        },
+        {
+          name: 'Revisão de custo de nuvem',
+          text: 'A conta de infraestrutura costuma crescer com coisas que ninguém usa mais: banco ocioso, endpoint de rede, função superdimensionada, ambiente que nunca desliga. Passo pela sua fatura linha a linha, ligo cada custo ao que ele de fato atende e corto ou troco o que não se paga, sem abrir mão da confiabilidade.',
+          proof: '~US$ 86/mês de custo fixo na AWS eliminados',
         },
         {
           name: 'Deploys mais rápidos e seguros',
