@@ -26,11 +26,11 @@ const caseTags = [
 ]
 
 const logos = [
-  { name: 'ecenture', src: '/logos/ecenture.png', h: 28, label: true },
+  { name: 'ecenture', src: '/logos/ecenture.svg', h: 30, label: false },
   { name: 'Dinâmica Soluções', src: '/logos/dinamica.png', h: 34, label: false },
   { name: 'iDw Soluções', src: '/logos/idw.png', h: 40, label: false },
   { name: 'Agência Gentileza', src: '/logos/gentileza.png', h: 30, label: true },
-  { name: 'Super1', src: '/logos/super1.png', h: 28, label: true },
+  { name: 'Super1', src: '/logos/super1.svg', h: 28, label: false },
 ]
 
 const broadcast = {
