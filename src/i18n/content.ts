@@ -4,7 +4,7 @@ export const EMAIL = 'luiz@luizalves.dev'
 export const LINKEDIN = 'https://www.linkedin.com/in/luizalvesdev/'
 export const GITHUB = 'https://github.com/luizalvesdev'
 
-type Service = { name: string; tag?: string; text: string; proof: string }
+type Service = { name: string; text: string; proof: string }
 type Case = { title: string; company: string; text: string; result: string; tags: string[] }
 type Step = { title: string; text: string }
 type Job = { role: string; company: string; period: string; text: string }
@@ -40,7 +40,7 @@ export const content = {
       'I help marketplaces and e-commerce platforms cut infrastructure costs, ship faster and keep integrations from breaking. .NET and Node.js, working in your time zone.',
     mailSubject: 'Project inquiry',
     nav: [
-      ['services', 'Services'],
+      ['services', 'How I can help'],
       ['work', 'Work'],
       ['process', 'How I work'],
       ['experience', 'Experience'],
@@ -80,43 +80,57 @@ export const content = {
     marquee,
     marqueeLabel: 'Technologies',
     services: {
-      label: '01 / Services',
-      title: 'Services',
-      subtitle: 'Focused engagements with a clear scope. We talk first, I understand the problem, then I send a written proposal with scope, timeline and a fixed price.',
+      label: '01 / How I can help',
+      title: 'Whatever is holding your platform back',
+      subtitle: "I'm the engineer you bring in when something in your product needs fixing, building or untangling, across backend, frontend and infrastructure. These are the problems I see most often. They're examples, not a menu.",
       cta: "Let's talk",
       list: [
         {
-          name: 'Bot and crawler traffic audit',
-          tag: 'Start here',
-          text: 'Bots and crawlers can account for a large share of what your servers process. I map your traffic by source, separate what helps you (search engines, partners) from what only costs you, and put the right rule in front of each. You get a written report and the fixes in place.',
+          name: 'Your servers are busy, but not with customers',
+          text: 'Bots and crawlers can take a large share of what your servers process. I measure your traffic by source and put the right rule in front of each one.',
           proof: '−49.5% page-rendering load',
         },
         {
-          name: 'Cloud cost review',
-          text: "Infrastructure bills tend to grow with things nobody uses anymore: idle databases, network endpoints, oversized functions, environments that never sleep. I go through your bill line by line, tie each cost to what it actually serves and cut or replace what doesn't pay for itself, without trading away reliability.",
+          name: 'The cloud bill keeps growing',
+          text: 'Idle databases, network endpoints, environments that never sleep. I tie each line of the bill to what it serves and cut what doesn’t pay for itself.',
           proof: '~US$86/month of fixed AWS cost removed',
         },
         {
-          name: 'Faster, safer deploys',
-          text: 'Manual or slow deploys make teams ship less and batch more risk into each release. I automate the path from merge to production: build only what changed, lean images, servers that update themselves, and no one logging in over SSH to ship.',
+          name: 'Deploys are slow, manual or scary',
+          text: 'I automate the path from merge to production: build only what changed, lean images, servers that update themselves, no SSH to ship.',
           proof: 'Manual SSH deploys → ~3.5 min automated',
         },
         {
-          name: 'Reliable integrations',
-          text: "Marketplace, payment and ERP integrations that don't silently drop orders or stock updates: webhooks, queues, background jobs, retries and the monitoring to know when something fails.",
+          name: 'Integrations fail silently',
+          text: 'Marketplace, payment and ERP integrations that drop orders or stock updates. Webhooks, queues, jobs and retries you can trust, plus alerts when something breaks.',
           proof: 'Tens of thousands of webhooks and jobs a day',
         },
         {
-          name: 'Payments and financial reconciliation',
-          text: 'Matching what your platform says was sold with what actually reached the bank: statement import, matching rules, divergence review, and finance flows tied to sales in the same transaction.',
+          name: 'The numbers don’t add up',
+          text: 'What your platform says was sold versus what reached the bank. Statement import, matching rules and a review queue for whatever doesn’t match.',
           proof: 'Reconciliation backend built from scratch',
         },
         {
-          name: 'Engineer on retainer',
-          text: 'A monthly block of hours as an extension of your team, for when you need someone who already knows your system to keep things moving.',
+          name: 'A legacy system has to go',
+          text: 'Old and new running side by side, compared automatically and kept in sync until cutover, so nothing gets lost on the way.',
+          proof: 'Finance migration with no data lost',
+        },
+        {
+          name: 'Something needs to be built',
+          text: 'A new feature, an internal tool or a whole system, from requirements to production, with the docs your team needs to run it.',
+          proof: 'Receipts system built solo, live on AWS',
+        },
+        {
+          name: 'You need another pair of hands',
+          text: 'A monthly block of hours as an extension of your team, from someone who already knows your system and keeps things moving.',
           proof: 'Monthly, scoped up front',
         },
       ] as Service[],
+      other: {
+        title: 'Not on this list?',
+        text: "Most problems aren't. If it lives in your code or your infrastructure, send it over. I'll tell you honestly whether I'm the right person for it.",
+        cta: 'Tell me about it',
+      },
     },
     work: {
       label: '02 / Selected work',
@@ -236,7 +250,7 @@ export const content = {
       'Ajudo marketplaces e e-commerces a reduzir custo de infraestrutura, entregar mais rápido e manter as integrações de pé. .NET e Node.js, no seu fuso.',
     mailSubject: 'Contato sobre projeto',
     nav: [
-      ['services', 'Serviços'],
+      ['services', 'Como ajudo'],
       ['work', 'Trabalhos'],
       ['process', 'Como trabalho'],
       ['experience', 'Experiência'],
@@ -276,43 +290,57 @@ export const content = {
     marquee,
     marqueeLabel: 'Tecnologias',
     services: {
-      label: '01 / Serviços',
-      title: 'Serviços',
-      subtitle: 'Trabalhos com escopo claro. Primeiro a gente conversa, eu entendo o problema e depois mando uma proposta por escrito com escopo, prazo e preço fechado.',
+      label: '01 / Como posso ajudar',
+      title: 'O que estiver travando sua plataforma',
+      subtitle: 'Sou o engenheiro que você chama quando algo no seu produto precisa ser corrigido, construído ou destravado, no backend, no frontend ou na infraestrutura. Estes são os problemas que mais aparecem. São exemplos, não um cardápio.',
       cta: 'Vamos conversar',
       list: [
         {
-          name: 'Auditoria de tráfego de bots e crawlers',
-          tag: 'Comece aqui',
-          text: 'Bots e crawlers podem ser boa parte do que seus servidores processam. Mapeio o tráfego por origem, separo o que te ajuda (buscadores, parceiros) do que só custa e coloco a regra certa na frente de cada um. Você recebe um relatório escrito e as correções aplicadas.',
+          name: 'Seus servidores estão ocupados, mas não com clientes',
+          text: 'Bots e crawlers podem ser boa parte do que seus servidores processam. Meço o tráfego por origem e coloco a regra certa na frente de cada um.',
           proof: '−49,5% de carga de renderização',
         },
         {
-          name: 'Revisão de custo de nuvem',
-          text: 'A conta de infraestrutura costuma crescer com coisas que ninguém usa mais: banco ocioso, endpoint de rede, função superdimensionada, ambiente que nunca desliga. Passo pela sua fatura linha a linha, ligo cada custo ao que ele de fato atende e corto ou troco o que não se paga, sem abrir mão da confiabilidade.',
+          name: 'A conta da nuvem só cresce',
+          text: 'Banco ocioso, endpoint de rede, ambiente que nunca desliga. Ligo cada linha da fatura ao que ela atende e corto o que não se paga.',
           proof: '~US$ 86/mês de custo fixo na AWS eliminados',
         },
         {
-          name: 'Deploys mais rápidos e seguros',
-          text: 'Deploy manual ou lento faz o time entregar menos e acumular risco em cada release. Automatizo o caminho do merge até a produção: build só do que mudou, imagens enxutas, servidores que se atualizam sozinhos e ninguém entrando por SSH para publicar.',
+          name: 'Deploy lento, manual ou arriscado',
+          text: 'Automatizo o caminho do merge até a produção: build só do que mudou, imagens enxutas, servidores que se atualizam sozinhos, sem SSH para publicar.',
           proof: 'Deploy manual por SSH → ~3,5 min automático',
         },
         {
-          name: 'Integrações confiáveis',
-          text: 'Integrações com marketplaces, pagamentos e ERP que não perdem pedido nem atualização de estoque em silêncio: webhooks, filas, jobs, retries e o monitoramento para saber quando algo falha.',
+          name: 'Integrações falham em silêncio',
+          text: 'Integrações com marketplaces, pagamentos e ERP que perdem pedido ou estoque. Webhooks, filas, jobs e retries confiáveis, com alerta quando algo quebra.',
           proof: 'Dezenas de milhares de webhooks e jobs por dia',
         },
         {
-          name: 'Pagamentos e conciliação financeira',
-          text: 'Bater o que a plataforma diz que vendeu com o que de fato caiu no banco: importação de extratos, regras de conciliação, revisão de divergências e financeiro ligado à venda na mesma transação.',
+          name: 'Os números não batem',
+          text: 'O que a plataforma diz que vendeu contra o que caiu no banco. Importação de extratos, regras de conciliação e uma fila de revisão para o que não bater.',
           proof: 'Backend de conciliação construído do zero',
         },
         {
-          name: 'Engenheiro em retainer',
-          text: 'Um bloco mensal de horas como extensão do seu time, para quando você precisa de alguém que já conhece o sistema para manter as coisas andando.',
+          name: 'Um sistema legado precisa sair',
+          text: 'Antigo e novo rodando lado a lado, conferidos automaticamente e sincronizados até a virada, para nada se perder no caminho.',
+          proof: 'Migração de financeiro sem perda de dados',
+        },
+        {
+          name: 'Algo precisa ser construído',
+          text: 'Uma funcionalidade nova, uma ferramenta interna ou um sistema inteiro, do levantamento à produção, com a documentação que o time precisa para tocar.',
+          proof: 'Sistema de recibos feito sozinho, no ar na AWS',
+        },
+        {
+          name: 'Você precisa de mais alguém no time',
+          text: 'Um bloco mensal de horas como extensão do seu time, de alguém que já conhece o sistema e mantém as coisas andando.',
           proof: 'Mensal, com escopo combinado antes',
         },
       ] as Service[],
+      other: {
+        title: 'Não está na lista?',
+        text: 'A maioria dos problemas não está. Se mora no seu código ou na sua infraestrutura, me manda. Eu digo com sinceridade se sou a pessoa certa.',
+        cta: 'Me conte',
+      },
     },
     work: {
       label: '02 / Trabalhos',

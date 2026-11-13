@@ -92,17 +92,18 @@ const side = t.work.side
       </div>
       <div class="services" data-group>
         {t.services.list.map((s, i) => (
-          <article class={`service ${i === 0 ? 'featured' : ''}`} data-reveal>
-            <div class="service-top mono">
-              <span class="n">{pad(i)}</span>
-              {s.tag && <span class="tag">{s.tag}</span>}
-            </div>
+          <article class="service" data-reveal>
+            <span class="service-n mono">{pad(i)}</span>
             <h3>{s.name}</h3>
             <p>{s.text}</p>
             <p class="service-proof mono"><span class="arrow">→</span>{s.proof}</p>
-            <a href={`${mail}${encodeURIComponent(` · ${s.name}`)}`} class="link">{t.services.cta} <Fragment set:html={arrowRight} /></a>
           </article>
         ))}
+        <a href={mail} class="service other" data-reveal>
+          <h3>{t.services.other.title}</h3>
+          <p>{t.services.other.text}</p>
+          <span class="other-cta">{t.services.other.cta} <Fragment set:html={arrowRight} /></span>
+        </a>
       </div>
     </div>
   </section>
@@ -958,25 +959,9 @@ const side = t.work.side
   .service:hover {
     border-color: var(--border-3);
   }
-  .service.featured {
-    border-color: rgba(109, 93, 252, 0.45);
-    background: linear-gradient(rgba(109, 93, 252, 0.1), var(--surface) 60%);
-  }
-  .service-top {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
+  .service-n {
     font-size: 12px;
-  }
-  .service-top .n {
     color: var(--accent-2);
-  }
-  .tag {
-    padding: 4px 10px;
-    border-radius: 999px;
-    background: var(--green-bg);
-    border: 1px solid var(--green-border);
-    color: var(--green-text);
   }
   .service h3 {
     margin: 0;
@@ -999,10 +984,40 @@ const side = t.work.side
     font-size: 12.5px;
     color: var(--body2);
   }
-  .service .link {
-    align-self: flex-start;
-    font-size: 14.5px;
-    font-weight: 500;
+  .service.other {
+    justify-content: center;
+    text-decoration: none;
+    border-color: transparent;
+    background: var(--accent);
+    transition:
+      background-color 200ms,
+      box-shadow 200ms;
+  }
+  .service.other:hover {
+    background: #7b6cff;
+    box-shadow: 0 16px 40px -16px rgba(109, 93, 252, 0.9);
+  }
+  .service.other h3,
+  .service.other p,
+  .other-cta {
+    color: #fff;
+  }
+  .service.other p {
+    opacity: 0.88;
+  }
+  .other-cta {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    margin-top: 6px;
+    font-size: 15px;
+    font-weight: 600;
+  }
+  .other-cta :global(svg) {
+    transition: transform 200ms;
+  }
+  .service.other:hover .other-cta :global(svg) {
+    transform: translateX(3px);
   }
 
   .projects-list {
