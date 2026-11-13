@@ -14,6 +14,7 @@ interface Props {
     resultLabel?: string
     width?: number
     height?: number
+    phones?: { src: string; alt: string }[]
   }
 }
 
@@ -46,15 +47,25 @@ const arrowUpRight = '<svg width="14" height="14" viewBox="0 0 24 24" fill="none
       </div>
     )}
   </div>
-  <div class="media browser" data-reveal data-media>
-    <div class="browser-bar mono">
-      <div class="win"><span></span><span></span><span></span></div>
-      <span class="url">{p.url}</span>
+  {p.phones ? (
+    <div class="media phones dots" data-reveal data-media>
+      {p.phones.map((img, i) => (
+        <div class={`phone ${i === 1 ? 'mid' : ''}`} data-parallax>
+          <img src={img.src} alt={img.alt} loading="lazy" decoding="async" width="600" height="1299" />
+        </div>
+      ))}
     </div>
-    <div class="browser-shot" style={p.width && p.height ? `aspect-ratio: ${p.width} / ${p.height}` : undefined} data-parallax-box>
-      <img src={p.image} alt={p.alt} loading="lazy" decoding="async" width={p.width ?? 1600} height={p.height ?? 1000} data-parallax />
+  ) : (
+    <div class="media browser" data-reveal data-media>
+      <div class="browser-bar mono">
+        <div class="win"><span></span><span></span><span></span></div>
+        <span class="url">{p.url}</span>
+      </div>
+      <div class="browser-shot" style={p.width && p.height ? `aspect-ratio: ${p.width} / ${p.height}` : undefined} data-parallax-box>
+        <img src={p.image} alt={p.alt} loading="lazy" decoding="async" width={p.width ?? 1600} height={p.height ?? 1000} data-parallax />
+      </div>
     </div>
-  </div>
+  )}
 </article>
 
 <style>

@@ -12,10 +12,10 @@ type Proof = { num: number; format: 'int' | 'dec' | 'tilde'; prefix?: string; su
 
 const marquee = [
   'C#', '.NET', 'ASP.NET Core', 'EF Core', 'Node.js', 'TypeScript', 'NestJS', 'PostgreSQL', 'Redis', 'RabbitMQ',
-  'Docker', 'Jenkins', 'GitHub Actions', 'AWS', 'Cloudflare', 'nginx', 'React', 'Next.js',
+  'Python', 'FastAPI', 'Claude API', 'Docker', 'Jenkins', 'GitHub Actions', 'AWS', 'Cloudflare', 'nginx', 'React', 'Next.js', 'Expo',
 ]
 
-const stack = ['C#/.NET', 'ASP.NET Core', 'EF Core', 'Node.js', 'TypeScript', 'NestJS', 'PostgreSQL', 'Redis', 'RabbitMQ', 'Docker', 'Jenkins', 'GitHub Actions', 'AWS', 'Cloudflare', 'nginx', 'React', 'Next.js']
+const stack = ['C#/.NET', 'ASP.NET Core', 'EF Core', 'Node.js', 'TypeScript', 'NestJS', 'Python', 'FastAPI', 'LLM APIs', 'PostgreSQL', 'Redis', 'RabbitMQ', 'Docker', 'Jenkins', 'GitHub Actions', 'AWS', 'Cloudflare', 'nginx', 'React', 'Next.js']
 
 const caseTags = [
   ['nginx', 'robots.txt', 'Next.js'],
@@ -35,9 +35,9 @@ export const content = {
   en: {
     lang: 'en',
     path: '/',
-    title: 'Luiz Alves · Software engineer for marketplaces and e-commerce',
+    title: 'Luiz Alves · Custom software, AI automations and e-commerce engineering',
     description:
-      'I help marketplaces and e-commerce platforms cut infrastructure costs, ship faster and keep integrations from breaking. .NET and Node.js, working in your time zone.',
+      'I build custom software and AI automations, and fix the systems your business already runs on. .NET, Node.js and Python, working in your time zone.',
     mailSubject: 'Project inquiry',
     nav: [
       ['services', 'How I can help'],
@@ -62,8 +62,8 @@ export const content = {
     hero: {
       hello: 'Luiz Alves · Software engineer',
       photoAlt: 'Photo of Luiz Alves',
-      title: ['I help marketplaces and e-commerce platforms', 'cut infrastructure costs, ship faster and keep integrations from breaking.'],
-      subtitle: 'Full stack engineer working with .NET and Node.js on production e-commerce. Based in Brazil, ',
+      title: ['I build custom software and AI automations,', 'and fix the systems your business already runs on.'],
+      subtitle: 'Full stack engineer with .NET, Node.js and Python: systems built around how you work, automations that take repetitive work off your team, and e-commerce platforms made faster, cheaper and more reliable. Based in Brazil, ',
       subtitleStrong: 'working in your time zone',
       cta1: 'Tell me about your problem',
       cta2: 'See selected work',
@@ -73,7 +73,7 @@ export const content = {
       items: [
         { num: 49.5, format: 'dec', prefix: '−', suffix: '%', desc: 'page-rendering load from bots' },
         { num: 3.5, format: 'dec', prefix: '~', suffix: ' min', desc: 'from merge to production, no manual deploys' },
-        { num: 1000000, format: 'tilde', desc: 'products on a multi-tenant platform' },
+        { num: 86, format: 'int', prefix: '~US$', suffix: '/mo', desc: 'of fixed cloud cost removed' },
         { num: 0, format: 'int', desc: 'records lost in a legacy finance migration' },
       ] as Proof[],
     },
@@ -81,10 +81,20 @@ export const content = {
     marqueeLabel: 'Technologies',
     services: {
       label: '01 / How I can help',
-      title: 'Whatever is holding your platform back',
-      subtitle: "I'm the engineer you bring in when something in your product needs fixing, building or untangling, across backend, frontend and infrastructure. These are the problems I see most often. They're examples, not a menu.",
+      title: 'Whatever your business needs from software',
+      subtitle: "I'm the engineer you bring in when something needs building, automating or fixing, across backend, frontend, infrastructure and AI. These are the problems I see most often. They're examples, not a menu.",
       cta: "Let's talk",
       list: [
+        {
+          name: 'A spreadsheet is running your business',
+          text: 'Monthly spreadsheets, numbering kept by hand, copy and paste between systems. I turn the process into software built around how you actually work, from requirements to production.',
+          proof: 'Receipts system built solo, live on AWS',
+        },
+        {
+          name: 'Repetitive work that AI could take over',
+          text: 'Reading documents, sorting requests, pulling data out of emails and PDFs, drafting replies. I build automations on top of LLMs where the AI proposes and your rules check it before anything is saved or sent.',
+          proof: 'AI entries validated by code before saving',
+        },
         {
           name: 'Your servers are busy, but not with customers',
           text: 'Bots and crawlers can take a large share of what your servers process. I measure your traffic by source and put the right rule in front of each one.',
@@ -114,16 +124,6 @@ export const content = {
           name: 'A legacy system has to go',
           text: 'Old and new running side by side, compared automatically and kept in sync until cutover, so nothing gets lost on the way.',
           proof: 'Finance migration with no data lost',
-        },
-        {
-          name: 'Something needs to be built',
-          text: 'A new feature, an internal tool or a whole system, from requirements to production, with the docs your team needs to run it.',
-          proof: 'Receipts system built solo, live on AWS',
-        },
-        {
-          name: 'You need another pair of hands',
-          text: 'A monthly block of hours as an extension of your team, from someone who already knows your system and keeps things moving.',
-          proof: 'Monthly, scoped up front',
         },
       ] as Service[],
       other: {
@@ -193,6 +193,26 @@ export const content = {
           tags: caseTags[4],
         },
       ] as Case[],
+      ai: {
+        kind: 'Mobile + web · AI',
+        name: 'Finanças',
+        description: 'Finance app for households on iOS, Android and web. You type an expense the way you would say it and an LLM turns it into a structured entry, with card statements, installments and recurring items handled for you.',
+        decisions: [
+          'The AI only proposes the entry; the app validates it with Zod before anything is saved.',
+          'Each household is an isolated tenant, with automated cross-household isolation tests.',
+          'Card purchases land on the right statement based on the closing day.',
+        ],
+        stack: ['Expo', 'React Native', 'TypeScript', 'PostgreSQL', 'Drizzle', 'Zod', 'Claude API'],
+        links: [{ label: 'Code', href: 'https://github.com/luizalvesdev/financas' }],
+        url: '',
+        image: '',
+        alt: '',
+        phones: [
+          { src: '/projects/financas-1.webp', alt: 'Monthly entries in the Finanças app' },
+          { src: '/projects/financas-2.webp', alt: 'Spending by category dashboard in the Finanças app' },
+          { src: '/projects/financas-3.webp', alt: 'Recurring and one-off entries in the Finanças app' },
+        ],
+      },
       side: {
         kind: 'SaaS · multi-tenant',
         name: 'Broadcast',
@@ -217,7 +237,7 @@ export const content = {
       title: 'How I work',
       steps: [
         { title: 'Written first', text: 'Send me an email describing the problem. I reply in writing, usually within one business day, with questions or a first read.' },
-        { title: 'Scope before work', text: "Once I understand the problem, you get a short proposal: what I'll do, what you'll get, timeline and a fixed price. Nothing starts before you approve it." },
+        { title: 'Scope before work', text: "Once I understand the problem, you get a short proposal: what I'll do, what you'll get, timeline and a fixed price. Ongoing work can be a monthly block of hours instead. Nothing starts before you approve it." },
         { title: 'Async, with overlap', text: "I'm in Natal, Brazil (UTC−3): 2–3 hours behind the UK and Ireland, and 1–2 hours ahead of US Eastern. Written updates as the work moves; calls when they actually help." },
         { title: 'You own everything', text: 'Code, docs and access stay with you. I leave the system documented so your team can run it without me.' },
       ] as Step[],
@@ -245,9 +265,9 @@ export const content = {
   pt: {
     lang: 'pt-BR',
     path: '/pt/',
-    title: 'Luiz Alves · Engenheiro de software para marketplaces e e-commerce',
+    title: 'Luiz Alves · Sistemas sob medida, automações com IA e e-commerce',
     description:
-      'Ajudo marketplaces e e-commerces a reduzir custo de infraestrutura, entregar mais rápido e manter as integrações de pé. .NET e Node.js, no seu fuso.',
+      'Construo sistemas sob medida e automações com IA, e conserto os sistemas que já rodam o seu negócio. .NET, Node.js e Python, no seu fuso.',
     mailSubject: 'Contato sobre projeto',
     nav: [
       ['services', 'Como ajudo'],
@@ -272,8 +292,8 @@ export const content = {
     hero: {
       hello: 'Luiz Alves · Engenheiro de software',
       photoAlt: 'Foto de Luiz Alves',
-      title: ['Ajudo marketplaces e e-commerces a', 'reduzir custo de infraestrutura, entregar mais rápido e manter as integrações de pé.'],
-      subtitle: 'Engenheiro full stack com .NET e Node.js em e-commerce em produção. Baseado no Brasil, ',
+      title: ['Construo sistemas sob medida e automações com IA,', 'e conserto os sistemas que já rodam o seu negócio.'],
+      subtitle: 'Engenheiro full stack com .NET, Node.js e Python: sistemas feitos do jeito que você trabalha, automações que tiram trabalho repetitivo do seu time e plataformas de e-commerce mais rápidas, baratas e confiáveis. Baseado no Brasil, ',
       subtitleStrong: 'trabalhando no seu fuso',
       cta1: 'Me conte seu problema',
       cta2: 'Ver trabalhos',
@@ -283,7 +303,7 @@ export const content = {
       items: [
         { num: 49.5, format: 'dec', prefix: '−', suffix: '%', desc: 'de carga de renderização com bots' },
         { num: 3.5, format: 'dec', prefix: '~', suffix: ' min', desc: 'do merge à produção, sem deploy manual' },
-        { num: 1000000, format: 'tilde', desc: 'de produtos numa plataforma multi-tenant' },
+        { num: 86, format: 'int', prefix: '~US$', suffix: '/mês', desc: 'de custo fixo de nuvem eliminados' },
         { num: 0, format: 'int', desc: 'registros perdidos na migração de um financeiro legado' },
       ] as Proof[],
     },
@@ -291,10 +311,20 @@ export const content = {
     marqueeLabel: 'Tecnologias',
     services: {
       label: '01 / Como posso ajudar',
-      title: 'O que estiver travando sua plataforma',
-      subtitle: 'Sou o engenheiro que você chama quando algo no seu produto precisa ser corrigido, construído ou destravado, no backend, no frontend ou na infraestrutura. Estes são os problemas que mais aparecem. São exemplos, não um cardápio.',
+      title: 'O que o seu negócio precisar de software',
+      subtitle: 'Sou o engenheiro que você chama quando algo precisa ser construído, automatizado ou consertado, no backend, no frontend, na infraestrutura ou com IA. Estes são os problemas que mais aparecem. São exemplos, não um cardápio.',
       cta: 'Vamos conversar',
       list: [
+        {
+          name: 'Uma planilha está tocando o seu negócio',
+          text: 'Planilha mensal, numeração controlada na mão, copiar e colar entre sistemas. Transformo o processo num sistema feito do jeito que você trabalha, do levantamento à produção.',
+          proof: 'Sistema de recibos feito sozinho, no ar na AWS',
+        },
+        {
+          name: 'Trabalho repetitivo que a IA poderia assumir',
+          text: 'Ler documentos, triar pedidos, extrair dados de e-mails e PDFs, rascunhar respostas. Construo automações com LLMs em que a IA propõe e as suas regras conferem antes de qualquer coisa ser salva ou enviada.',
+          proof: 'Lançamentos por IA validados pelo código antes de salvar',
+        },
         {
           name: 'Seus servidores estão ocupados, mas não com clientes',
           text: 'Bots e crawlers podem ser boa parte do que seus servidores processam. Meço o tráfego por origem e coloco a regra certa na frente de cada um.',
@@ -324,16 +354,6 @@ export const content = {
           name: 'Um sistema legado precisa sair',
           text: 'Antigo e novo rodando lado a lado, conferidos automaticamente e sincronizados até a virada, para nada se perder no caminho.',
           proof: 'Migração de financeiro sem perda de dados',
-        },
-        {
-          name: 'Algo precisa ser construído',
-          text: 'Uma funcionalidade nova, uma ferramenta interna ou um sistema inteiro, do levantamento à produção, com a documentação que o time precisa para tocar.',
-          proof: 'Sistema de recibos feito sozinho, no ar na AWS',
-        },
-        {
-          name: 'Você precisa de mais alguém no time',
-          text: 'Um bloco mensal de horas como extensão do seu time, de alguém que já conhece o sistema e mantém as coisas andando.',
-          proof: 'Mensal, com escopo combinado antes',
         },
       ] as Service[],
       other: {
@@ -403,6 +423,26 @@ export const content = {
           tags: caseTags[4],
         },
       ] as Case[],
+      ai: {
+        kind: 'Mobile + web · IA',
+        name: 'Finanças',
+        description: 'App de finanças para casas e famílias no iOS, Android e web. Você digita o gasto do jeito que falaria e um LLM transforma em lançamento estruturado, com faturas de cartão, parcelamentos e recorrentes tratados pelo app.',
+        decisions: [
+          'A IA só propõe o lançamento; o app valida com Zod antes de salvar qualquer coisa.',
+          'Cada casa é um tenant isolado, com testes automatizados de isolamento entre casas.',
+          'Compra no cartão cai na fatura certa pelo dia de fechamento.',
+        ],
+        stack: ['Expo', 'React Native', 'TypeScript', 'PostgreSQL', 'Drizzle', 'Zod', 'Claude API'],
+        links: [{ label: 'Código', href: 'https://github.com/luizalvesdev/financas' }],
+        url: '',
+        image: '',
+        alt: '',
+        phones: [
+          { src: '/projects/financas-1.webp', alt: 'Lançamentos do mês no app Finanças' },
+          { src: '/projects/financas-2.webp', alt: 'Painel de gastos por categoria no app Finanças' },
+          { src: '/projects/financas-3.webp', alt: 'Recorrentes e lançamentos avulsos no app Finanças' },
+        ],
+      },
       side: {
         kind: 'SaaS · multi-tenant',
         name: 'Broadcast',
@@ -427,7 +467,7 @@ export const content = {
       title: 'Como trabalho',
       steps: [
         { title: 'Por escrito primeiro', text: 'Me mande um e-mail descrevendo o problema. Respondo por escrito, normalmente em até um dia útil, com perguntas ou uma primeira análise.' },
-        { title: 'Escopo antes do trabalho', text: 'Entendido o problema, você recebe uma proposta curta: o que vou fazer, o que você recebe, prazo e preço fechado. Nada começa antes da sua aprovação.' },
+        { title: 'Escopo antes do trabalho', text: 'Entendido o problema, você recebe uma proposta curta: o que vou fazer, o que você recebe, prazo e preço fechado. Para trabalho contínuo, pode ser um bloco mensal de horas. Nada começa antes da sua aprovação.' },
         { title: 'Assíncrono, com horário em comum', text: 'Estou em Natal (UTC−3), com boa sobreposição de horário com Europa e EUA. Atualizações por escrito durante o trabalho; call quando realmente ajuda.' },
         { title: 'Tudo fica com você', text: 'Código, documentação e acessos são seus. Deixo o sistema documentado para o seu time tocar sem mim.' },
       ] as Step[],
