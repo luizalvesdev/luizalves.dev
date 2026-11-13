@@ -37,7 +37,7 @@ export const content = {
     path: '/',
     title: 'Luiz Alves · Custom software, AI automations and e-commerce engineering',
     description:
-      'I build custom software and AI automations, and fix the systems your business already runs on. .NET, Node.js and Python, working in your time zone.',
+      'I build custom software and AI automations, and fix the systems your business already runs on. .NET, Node.js and Python.',
     mailSubject: 'Project inquiry',
     nav: [
       ['services', 'How I can help'],
@@ -63,8 +63,7 @@ export const content = {
       hello: 'Luiz Alves · Software engineer',
       photoAlt: 'Photo of Luiz Alves',
       title: ['I build custom software and AI automations,', 'and fix the systems your business already runs on.'],
-      subtitle: 'Full stack engineer with .NET, Node.js and Python: systems built around how you work, automations that take repetitive work off your team, and e-commerce platforms made faster, cheaper and more reliable. Based in Brazil, ',
-      subtitleStrong: 'working in your time zone',
+      subtitle: 'Full stack engineer with .NET, Node.js and Python: systems built around how you work, automations that take repetitive work off your team, and e-commerce platforms made faster, cheaper and more reliable.',
       cta1: 'Tell me about your problem',
       cta2: 'See selected work',
     },
@@ -267,7 +266,7 @@ export const content = {
     path: '/pt/',
     title: 'Luiz Alves · Sistemas sob medida, automações com IA e e-commerce',
     description:
-      'Construo sistemas sob medida e automações com IA, e conserto os sistemas que já rodam o seu negócio. .NET, Node.js e Python, no seu fuso.',
+      'Construo sistemas sob medida e automações com IA, e conserto os sistemas que já rodam o seu negócio. .NET, Node.js e Python.',
     mailSubject: 'Contato sobre projeto',
     nav: [
       ['services', 'Como ajudo'],
@@ -293,8 +292,7 @@ export const content = {
       hello: 'Luiz Alves · Engenheiro de software',
       photoAlt: 'Foto de Luiz Alves',
       title: ['Construo sistemas sob medida e automações com IA,', 'e conserto os sistemas que já rodam o seu negócio.'],
-      subtitle: 'Engenheiro full stack com .NET, Node.js e Python: sistemas feitos do jeito que você trabalha, automações que tiram trabalho repetitivo do seu time e plataformas de e-commerce mais rápidas, baratas e confiáveis. Baseado no Brasil, ',
-      subtitleStrong: 'trabalhando no seu fuso',
+      subtitle: 'Engenheiro full stack com .NET, Node.js e Python: sistemas feitos do jeito que você trabalha, automações que tiram trabalho repetitivo do seu time e plataformas de e-commerce mais rápidas, baratas e confiáveis.',
       cta1: 'Me conte seu problema',
       cta2: 'Ver trabalhos',
     },

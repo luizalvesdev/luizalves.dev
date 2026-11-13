@@ -40,7 +40,7 @@ const side = t.work.side
             <span class="h1-line accent">{words(t.hero.title[1]).map((w, i) => <>{i > 0 && ' '}<span class="mask"><span data-hero="word">{w}</span></span></>)}</span>
           </h1>
         </div>
-        <p class="hero-sub" data-reveal data-hero="sub">{t.hero.subtitle}<span>{t.hero.subtitleStrong}</span>.</p>
+        <p class="hero-sub" data-reveal data-hero="sub">{t.hero.subtitle}</p>
         <div class="ctas">
           <a href={mail} class="btn btn-primary" data-reveal data-hero="cta">
             {t.hero.cta1}
