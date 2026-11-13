@@ -82,7 +82,7 @@ function projects() {
     const media = card.querySelector('[data-media]')!
     onEnter(card, (tl) => {
       tl.to(card, { ...fadeUp(40), duration: 0.8 }, 0)
-      tl.to(q('[data-item]', card).slice(0, 3), { ...fadeUp(12), duration: 0.5, stagger: 0.08 }, 0.15)
+      tl.to(q('[data-item]', card).filter((el) => !el.closest('.decisions, .links')), { ...fadeUp(12), duration: 0.5, stagger: 0.08 }, 0.15)
       tl.to(q('.decisions [data-item]', card), { ...fadeUp(12), duration: 0.5, stagger: 0.08 }, 0.39)
       tl.to(q('[data-tag]', card), { ...fadeUp(12), duration: 0.5, stagger: 0.03 }, 0.7)
       tl.to(q('.links [data-item]', card), { ...fadeUp(12), duration: 0.5, stagger: 0.08 }, 0.9)

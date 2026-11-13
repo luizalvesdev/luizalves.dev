@@ -116,8 +116,28 @@ export const content = {
     work: {
       label: '02 / Selected work',
       title: 'Selected work',
-      subtitle: 'Work done as a software engineer at the companies listed under Experience. Clients are kept anonymous and figures about their operations are given in ranges.',
+      subtitle: 'A freelance project built for a client, then work done as a software engineer at the companies listed under Experience. Clients are kept anonymous and figures about their operations are given in ranges.',
       result: 'Result',
+      featured: {
+        label: 'Freelance · client project',
+        kind: 'Internal system · in production',
+        name: 'Reimbursement receipts system',
+        description: 'Four institutes send a monthly spreadsheet of expenses, and the client issued reimbursement receipts from them, with the numbering tracked in a separate sheet. I built the whole system alone, from requirements to production on AWS: import with line-by-line review, a registry of the people being reimbursed, and receipts generated as PDFs in the background, ready to download one by one or in a batch.',
+        decisions: [
+          'Receipts are immutable once generated, with one global sequence across all institutes that restarts every year.',
+          'Re-importing an unchanged spreadsheet is blocked; a changed one only updates what can still change.',
+          'Fixed costs cut after launch: the SQS queue was replaced by a queue in the database and PostgreSQL moved to a serverless free tier.',
+        ],
+        result: '~US$86/month of fixed infrastructure cost removed, and cold starts down from ~22 s to ~5 s.',
+        resultLabel: 'Result',
+        stack: ['Next.js', 'TypeScript', 'Python', 'FastAPI', 'PostgreSQL', 'AWS Lambda', 'S3', 'CloudFront', 'Serverless Framework'],
+        links: [] as { label: string; href: string }[],
+        url: 'prestacontas · monthly report',
+        image: '/projects/receipts.webp',
+        width: 1600,
+        height: 1258,
+        alt: 'Monthly report under review, with sample data',
+      },
       cases: [
         {
           title: 'Crawler traffic was eating the rendering budget',
@@ -289,8 +309,28 @@ export const content = {
     work: {
       label: '02 / Trabalhos',
       title: 'Trabalhos selecionados',
-      subtitle: 'Trabalhos feitos como engenheiro de software nas empresas listadas em Experiência. Os clientes ficam anônimos e os números da operação deles aparecem em faixas.',
+      subtitle: 'Um projeto freelance feito para um cliente e, depois, trabalhos como engenheiro de software nas empresas listadas em Experiência. Os clientes ficam anônimos e os números da operação deles aparecem em faixas.',
       result: 'Resultado',
+      featured: {
+        label: 'Freelance · projeto para cliente',
+        kind: 'Sistema interno · em produção',
+        name: 'Sistema de recibos de reembolso',
+        description: 'Quatro institutos mandam uma planilha mensal de despesas, e o cliente emitia os recibos de reembolso a partir delas, com a numeração controlada numa planilha à parte. Construí o sistema inteiro sozinho, do levantamento à produção na AWS: importação com revisão linha a linha, cadastro das pessoas reembolsadas e recibos gerados em PDF em segundo plano, para baixar um a um ou em lote.',
+        decisions: [
+          'Recibo gerado é imutável, com uma numeração única entre todos os institutos que reinicia a cada ano.',
+          'Reimportar uma planilha sem mudança é bloqueado; uma planilha alterada só atualiza o que ainda pode mudar.',
+          'Custo fixo cortado depois do lançamento: a fila do SQS virou uma fila no banco e o PostgreSQL foi para um plano serverless gratuito.',
+        ],
+        result: '~US$ 86/mês de custo fixo de infraestrutura eliminados, e cold start de ~22 s para ~5 s.',
+        resultLabel: 'Resultado',
+        stack: ['Next.js', 'TypeScript', 'Python', 'FastAPI', 'PostgreSQL', 'AWS Lambda', 'S3', 'CloudFront', 'Serverless Framework'],
+        links: [] as { label: string; href: string }[],
+        url: 'prestacontas · prestação mensal',
+        image: '/projects/receipts.webp',
+        width: 1600,
+        height: 1258,
+        alt: 'Prestação mensal em revisão, com dados de exemplo',
+      },
       cases: [
         {
           title: 'Tráfego de crawlers consumia a renderização',

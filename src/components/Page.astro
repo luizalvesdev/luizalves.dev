@@ -2,6 +2,7 @@
 import type { Locale } from '../i18n/content'
 import { content, mailto, EMAIL, LINKEDIN, GITHUB } from '../i18n/content'
 import Header from './Header.astro'
+import Project from './Project.astro'
 
 interface Props {
   locale: Locale
@@ -114,6 +115,8 @@ const side = t.work.side
         <h2 class="h2" data-reveal data-head="title">{t.work.title}</h2>
         <p class="lead narrow" data-reveal data-head="title">{t.work.subtitle}</p>
       </div>
+      <Project p={t.work.featured} />
+
       <ol class="cases">
         {t.work.cases.map((c, i) => (
           <li class="case" data-group>
@@ -133,38 +136,7 @@ const side = t.work.side
         ))}
       </ol>
 
-      <article class="project" data-reveal data-project>
-        <div class="project-glow" aria-hidden="true"></div>
-        <div class="project-copy">
-          <div class="kind mono" data-reveal data-item><span class="n">{side.label}</span><span class="dash"></span><span>{side.kind}</span></div>
-          <h3 data-reveal data-item>{side.name}</h3>
-          <p class="project-desc" data-reveal data-item>{side.description}</p>
-          <div class="decisions">
-            <ul>
-              {side.decisions.map((d) => (
-                <li data-reveal data-item><span class="arrow">→</span><span>{d}</span></li>
-              ))}
-            </ul>
-          </div>
-          <ul class="chips">
-            {side.stack.map((s) => <li class="chip" data-reveal data-tag>{s}</li>)}
-          </ul>
-          <div class="links">
-            {side.links.map((l) => (
-              <a href={l.href} class="link" target="_blank" rel="noopener" data-reveal data-item>{l.label} <Fragment set:html={arrowUpRight} /></a>
-            ))}
-          </div>
-        </div>
-        <div class="media browser" data-reveal data-media>
-          <div class="browser-bar mono">
-            <div class="win"><span></span><span></span><span></span></div>
-            <span class="url">{side.url}</span>
-          </div>
-          <div class="browser-shot" data-parallax-box>
-            <img src={side.image} alt={side.alt} loading="lazy" decoding="async" width="1600" height="1000" data-parallax />
-          </div>
-        </div>
-      </article>
+      <Project p={side} />
     </div>
   </section>
 
@@ -479,93 +451,6 @@ const side = t.work.side
     flex-direction: column;
     gap: 16px;
   }
-  .project {
-    position: relative;
-    border-radius: 24px;
-    border: 1px solid var(--border);
-    background: linear-gradient(var(--card-from), var(--card-to));
-    padding: clamp(24px, 3.4vw, 44px);
-    display: flex;
-    flex-wrap: wrap;
-    gap: clamp(32px, 4vw, 56px);
-    align-items: center;
-    transform-style: preserve-3d;
-    will-change: transform;
-  }
-  .project-glow {
-    position: absolute;
-    inset: 0;
-    border-radius: inherit;
-    pointer-events: none;
-    opacity: 0;
-    transition: opacity 400ms;
-    background: radial-gradient(420px circle at var(--mx, 50%) var(--my, 50%), rgba(109, 93, 252, 0.16), transparent 60%);
-  }
-  .project:hover .project-glow {
-    opacity: 1;
-  }
-  .project-copy {
-    position: relative;
-    flex: 1 1 380px;
-    min-width: 0;
-    display: flex;
-    flex-direction: column;
-    gap: 22px;
-  }
-  .kind {
-    display: flex;
-    align-items: center;
-    gap: 12px;
-    font-size: 12.5px;
-    color: var(--dim);
-  }
-  .kind .n {
-    color: var(--accent-2);
-  }
-  .dash {
-    width: 24px;
-    height: 1px;
-    background: rgba(169, 163, 255, 0.3);
-  }
-  .project h3 {
-    margin: 0;
-    font-size: clamp(30px, 3.2vw, 40px);
-    font-weight: 700;
-    letter-spacing: -0.025em;
-    color: var(--strong);
-  }
-  .project-desc {
-    margin: 0;
-    font-size: 16.5px;
-    line-height: 1.65;
-    color: var(--muted);
-  }
-  .decisions {
-    display: flex;
-    flex-direction: column;
-    gap: 12px;
-  }
-  .decisions-label {
-    font-size: 11.5px;
-    text-transform: uppercase;
-    letter-spacing: 0.1em;
-    color: var(--dim);
-  }
-  .decisions ul {
-    margin: 0;
-    padding: 0;
-    list-style: none;
-    display: flex;
-    flex-direction: column;
-    gap: 10px;
-  }
-  .decisions li {
-    display: flex;
-    gap: 14px;
-    font-size: 15px;
-    line-height: 1.55;
-    color: var(--body2);
-  }
   .arrow {
     color: var(--accent);
     font-size: 13px;
@@ -611,98 +496,6 @@ const side = t.work.side
   .link:hover :global(svg) {
     transform: translate(2px, -2px);
   }
-  .media {
-    position: relative;
-    flex: 1.25 1 440px;
-    min-width: 0;
-    border-radius: 16px;
-    border: 1px solid rgba(169, 163, 255, 0.14);
-    background-color: var(--frame);
-    overflow: hidden;
-  }
-  .browser-bar {
-    display: flex;
-    align-items: center;
-    gap: 12px;
-    padding: 10px 14px;
-    border-bottom: 1px solid var(--line);
-    font-size: 11.5px;
-    color: var(--faint);
-    position: relative;
-    z-index: 1;
-    background: var(--frame);
-  }
-  .browser-bar .win {
-    display: flex;
-    gap: 6px;
-  }
-  .browser-bar .win span {
-    width: 9px;
-    height: 9px;
-    border-radius: 999px;
-    background: var(--marker-off);
-  }
-  .url {
-    flex: 1;
-    text-align: center;
-    padding: 4px 10px;
-    border-radius: 6px;
-    background: rgba(169, 163, 255, 0.06);
-    overflow: hidden;
-    text-overflow: ellipsis;
-    white-space: nowrap;
-  }
-  .browser-shot {
-    aspect-ratio: 16 / 10;
-    overflow: hidden;
-    background: var(--frame-inner);
-  }
-  .browser-shot img {
-    width: 100%;
-    height: calc(100% + 80px);
-    margin-top: -40px;
-    object-fit: cover;
-    object-position: top;
-    transition: scale 400ms ease;
-  }
-  .project:hover .browser-shot img {
-    scale: 1.03;
-  }
-  .phones {
-    aspect-ratio: 16 / 11;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: clamp(14px, 2.4vw, 28px);
-    padding: 24px;
-  }
-  .phone {
-    width: 30%;
-    max-width: 190px;
-    aspect-ratio: 9 / 19.5;
-    border-radius: clamp(14px, 2vw, 26px);
-    border: 1px solid rgba(169, 163, 255, 0.2);
-    background: var(--frame-inner);
-    overflow: hidden;
-    transition: scale 400ms ease;
-  }
-  .phone img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    object-position: top;
-  }
-  .phone:not(.mid) {
-    margin-top: 28px;
-  }
-  .phone.mid {
-    margin-bottom: 28px;
-    box-shadow: 0 30px 60px -30px rgba(109, 93, 252, 0.6);
-  }
-  .project:hover .phone {
-    scale: 1.03;
-  }
-
   /* Experience */
   .exp {
     display: flex;
