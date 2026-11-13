@@ -66,6 +66,21 @@ const side = t.work.side
     </div>
   </section>
 
+  <!-- Trusted by -->
+  <section class="trusted" aria-label={t.trusted.title}>
+    <div class="wrap trusted-inner">
+      <p class="trusted-title mono">{t.trusted.title}</p>
+      <ul class="logos" data-group>
+        {t.trusted.logos.map((l) => (
+          <li data-reveal>
+            <img src={l.src} alt={l.label ? '' : l.name} style={`height: ${l.h}px`} loading="lazy" decoding="async" />
+            {l.label && <span>{l.name}</span>}
+          </li>
+        ))}
+      </ul>
+    </div>
+  </section>
+
   <!-- Marquee -->
   <div class="marquee" aria-label={t.marqueeLabel} data-marquee>
     <div class="marquee-track mono" data-marquee-track>
@@ -1160,5 +1175,59 @@ const side = t.work.side
   }
   .exp .timeline {
     gap: 36px;
+  }
+
+  /* Trusted by */
+  .trusted {
+    padding: clamp(36px, 4vw, 52px) 0 clamp(40px, 4.5vw, 56px);
+    border-top: 1px solid var(--line);
+  }
+  .trusted-inner {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 26px;
+  }
+  .trusted-title {
+    margin: 0;
+    font-size: 12.5px;
+    letter-spacing: 0.04em;
+    color: var(--dim);
+    text-align: center;
+  }
+  .logos {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    gap: 28px clamp(32px, 5vw, 64px);
+  }
+  .logos li {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+  .logos li > * {
+    opacity: 0.62;
+    transition: opacity 200ms;
+  }
+  .logos li:hover > * {
+    opacity: 1;
+  }
+  .logos img {
+    width: auto;
+  }
+  :global([data-theme='light']) .logos img {
+    filter: brightness(0);
+  }
+  .logos span {
+    font-size: 18px;
+    font-weight: 650;
+    letter-spacing: -0.01em;
+    color: var(--strong);
+    white-space: nowrap;
   }
 </style>

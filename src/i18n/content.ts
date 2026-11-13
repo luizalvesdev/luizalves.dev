@@ -25,6 +25,14 @@ const caseTags = [
   ['C#/.NET', 'ASP.NET Core', 'EF Core', 'PostgreSQL'],
 ]
 
+const logos = [
+  { name: 'ecenture', src: '/logos/ecenture.png', h: 28, label: true },
+  { name: 'Dinâmica Soluções', src: '/logos/dinamica.png', h: 34, label: false },
+  { name: 'iDw Soluções', src: '/logos/idw.png', h: 40, label: false },
+  { name: 'Agência Gentileza', src: '/logos/gentileza.png', h: 30, label: true },
+  { name: 'Super1', src: '/logos/super1.png', h: 28, label: true },
+]
+
 const broadcast = {
   stack: ['React', 'TypeScript', 'Firebase', 'Cloud Functions', 'Firestore', 'Vitest'],
   demo: 'https://broadcast-paulofilho.web.app',
@@ -78,6 +86,7 @@ export const content = {
     },
     marquee,
     marqueeLabel: 'Technologies',
+    trusted: { title: 'Companies that trusted my work', logos },
     services: {
       label: '01 / How I can help',
       title: 'Whatever your business needs from software',
@@ -307,6 +316,7 @@ export const content = {
     },
     marquee,
     marqueeLabel: 'Tecnologias',
+    trusted: { title: 'Empresas que confiaram no meu trabalho', logos },
     services: {
       label: '01 / Como posso ajudar',
       title: 'O que o seu negócio precisar de software',
