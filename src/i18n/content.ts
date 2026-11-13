@@ -116,10 +116,9 @@ export const content = {
     work: {
       label: '02 / Selected work',
       title: 'Selected work',
-      subtitle: 'A freelance project built for a client, then work done as a software engineer at the companies listed under Experience. Clients are kept anonymous and figures about their operations are given in ranges.',
+      subtitle: 'Systems I built end to end, followed by work done as a software engineer at the companies listed under Experience. Clients are kept anonymous and figures about their operations are given in ranges.',
       result: 'Result',
       featured: {
-        label: 'Freelance · client project',
         kind: 'Internal system · in production',
         name: 'Reimbursement receipts system',
         description: 'Four institutes send a monthly spreadsheet of expenses, and the client issued reimbursement receipts from them, with the numbering tracked in a separate sheet. I built the whole system alone, from requirements to production on AWS: import with line-by-line review, a registry of the people being reimbursed, and receipts generated as PDFs in the background, ready to download one by one or in a batch.',
@@ -176,7 +175,6 @@ export const content = {
         },
       ] as Case[],
       side: {
-        label: 'Side project',
         kind: 'SaaS · multi-tenant',
         name: 'Broadcast',
         description: 'Each customer manages connections, contacts and messages, with instant or scheduled sending and real-time per-recipient status.',
@@ -309,10 +307,9 @@ export const content = {
     work: {
       label: '02 / Trabalhos',
       title: 'Trabalhos selecionados',
-      subtitle: 'Um projeto freelance feito para um cliente e, depois, trabalhos como engenheiro de software nas empresas listadas em Experiência. Os clientes ficam anônimos e os números da operação deles aparecem em faixas.',
+      subtitle: 'Sistemas que construí de ponta a ponta e, depois, trabalhos como engenheiro de software nas empresas listadas em Experiência. Os clientes ficam anônimos e os números da operação deles aparecem em faixas.',
       result: 'Resultado',
       featured: {
-        label: 'Freelance · projeto para cliente',
         kind: 'Sistema interno · em produção',
         name: 'Sistema de recibos de reembolso',
         description: 'Quatro institutos mandam uma planilha mensal de despesas, e o cliente emitia os recibos de reembolso a partir delas, com a numeração controlada numa planilha à parte. Construí o sistema inteiro sozinho, do levantamento à produção na AWS: importação com revisão linha a linha, cadastro das pessoas reembolsadas e recibos gerados em PDF em segundo plano, para baixar um a um ou em lote.',
@@ -369,7 +366,6 @@ export const content = {
         },
       ] as Case[],
       side: {
-        label: 'Projeto pessoal',
         kind: 'SaaS · multi-tenant',
         name: 'Broadcast',
         description: 'Cada cliente gerencia conexões, contatos e mensagens, com envio imediato ou agendado e status por destinatário em tempo real.',

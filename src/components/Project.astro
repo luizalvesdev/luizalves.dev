@@ -1,7 +1,6 @@
 ---
 interface Props {
   p: {
-    label: string
     kind: string
     name: string
     description: string
@@ -25,7 +24,7 @@ const arrowUpRight = '<svg width="14" height="14" viewBox="0 0 24 24" fill="none
 <article class="project" data-reveal data-project>
   <div class="project-glow" aria-hidden="true"></div>
   <div class="project-copy">
-    <div class="kind mono" data-reveal data-item><span class="n">{p.label}</span><span class="dash"></span><span>{p.kind}</span></div>
+    <div class="kind mono" data-reveal data-item><span>{p.kind}</span></div>
     <h3 data-reveal data-item>{p.name}</h3>
     <p class="project-desc" data-reveal data-item>{p.description}</p>
     {p.result && <p class="result" data-reveal data-item><span class="mono">{p.resultLabel}</span>{p.result}</p>}

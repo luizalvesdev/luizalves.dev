@@ -115,7 +115,10 @@ const side = t.work.side
         <h2 class="h2" data-reveal data-head="title">{t.work.title}</h2>
         <p class="lead narrow" data-reveal data-head="title">{t.work.subtitle}</p>
       </div>
-      <Project p={t.work.featured} />
+      <div class="projects-list">
+        <Project p={t.work.featured} />
+        <Project p={side} />
+      </div>
 
       <ol class="cases">
         {t.work.cases.map((c, i) => (
@@ -136,7 +139,6 @@ const side = t.work.side
         ))}
       </ol>
 
-      <Project p={side} />
     </div>
   </section>
 
@@ -1001,6 +1003,12 @@ const side = t.work.side
     align-self: flex-start;
     font-size: 14.5px;
     font-weight: 500;
+  }
+
+  .projects-list {
+    display: flex;
+    flex-direction: column;
+    gap: clamp(24px, 3vw, 40px);
   }
 
   /* Cases */
