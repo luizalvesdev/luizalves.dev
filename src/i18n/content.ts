@@ -246,7 +246,7 @@ export const content = {
       steps: [
         { title: 'Written first', text: 'Send me an email describing the problem. I reply in writing, usually within one business day, with questions or a first read.' },
         { title: 'Scope before work', text: "Once I understand the problem, you get a short proposal: what I'll do, what you'll get, timeline and a fixed price. Ongoing work can be a monthly block of hours instead. Nothing starts before you approve it." },
-        { title: 'Async, with overlap', text: "I'm in Natal, Brazil (UTC−3): 2–3 hours behind the UK and Ireland, and 1–2 hours ahead of US Eastern. Written updates as the work moves; calls when they actually help." },
+        { title: 'Async, with overlap', text: "I'm in Natal, Brazil (UTC−3): 3–4 hours behind the UK and Ireland, and 1–2 hours ahead of US Eastern. Written updates as the work moves; calls when they actually help." },
         { title: 'You own everything', text: 'Code, docs and access stay with you. I leave the system documented so your team can run it without me.' },
       ] as Step[],
     },
